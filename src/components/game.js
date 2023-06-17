@@ -49,6 +49,22 @@ export default function PuzzleGame() {
           }
         }
     };
+
+    const handleTileClick = (row, col) => {
+        const emptyRow = board.findIndex((row) => row.includes(null));
+        const emptyCol = board[emptyRow].indexOf(null);
+    
+        if ((row === emptyRow && Math.abs(col - emptyCol) === 1) || (col === emptyCol && Math.abs(row - emptyRow) === 1)) {
+          const newBoard = [...board];
+          newBoard[emptyRow][emptyCol] = newBoard[row][col];
+          newBoard[row][col] = null;
+          setBoard(newBoard);
+    
+          if (isGoalState(newBoard)) {
+            toast.success('Congratulations! You won the game!');
+          }
+        }
+    };
     
     const isValidMove = (row, col) => {
         return row >= 0 && row < 3 && col >= 0 && col < 3;
@@ -108,7 +124,7 @@ export default function PuzzleGame() {
                             className={`${
                                 col === null ? 'bg-[#08DB06] opacity-80' : ''
                             } p-12 font-bold text-xl text-[#08DB06] outline-none border border-[#08DB06]`}
-                            onClick={() => handleKeyPress({ key: 'Click' })}
+                            onClick={() => handleTileClick(rowIndex, colIndex)}
                             >
                             {col}
                             </button>
