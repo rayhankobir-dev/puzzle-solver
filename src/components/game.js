@@ -70,7 +70,7 @@ export default function PuzzleGame() {
 
     const handleSolutionClick = () => {
         setLoading(true);
-        fetch("http://localhost:4000/api/solve", {
+        fetch("https://puzzle-solver-api.vercel.app/api/solve", {
             method: "POST",
             body: JSON.stringify({ initialState: convertBoardToData(board) }),
             headers: {
