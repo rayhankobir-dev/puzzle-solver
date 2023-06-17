@@ -15,13 +15,56 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+.logo-text {
+  background: linear-gradient(90deg, #BDDB06 0%, #08DB06 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.primary-text {
+  background: linear-gradient(90deg, #08DB06 0%, #08DB06 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-color {
+  border: 1px solid #08DB06;
+}
+.primary-bg {
+  background: #08DB06;
+}
+
+/* treeStyles.css */
+.node circle {
+  fill: white;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+/* .rd3t-link {
+  stroke: #08DB06 !important;
+} */
+/* .rd3t-node circle,
+.rd3t-leaf-node circle {
+  fill: green;
+  stroke: none !important;
+} */
+.normal-link {
+  stroke: red !important;
+}
+.solution-link {
+  stroke: #08DB06 !important;
+}
+.solution-node {
+  text-align: center;
+  /* fill: #08DB06 !important; */
+  stroke: black !important;
+}
+
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: url('../../public/background.svg');
+  background-repeat: no-repeat;
 }
