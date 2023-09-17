@@ -96,6 +96,7 @@ export default function PuzzleGame() {
         .then((response) => response.json())
         .then((data) => {
             setSolution(data);
+            console.log(data);
             setLoading(false);
         })
         .catch((error) => console.error(error));
