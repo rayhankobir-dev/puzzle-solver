@@ -86,7 +86,6 @@ export default function PuzzleGame() {
 
     const handleSolutionClick = () => {
         setLoading(true);
-        console.log(JSON.stringify({ initialState: convertBoardToData(board) });
         fetch("https://puzzle-solver-api.vercel.app/solve", {
             method: "POST",
             body: JSON.stringify({ initialState: convertBoardToData(board) }),
@@ -97,7 +96,7 @@ export default function PuzzleGame() {
         .then((response) => response.json())
         .then((data) => {
             setSolution(data);
-            console.log(data.tree);
+            console.log(JSON.stringify({ initialState: convertBoardToData(board) });
             setLoading(false);
         })
         .catch((error) => console.error(error));
