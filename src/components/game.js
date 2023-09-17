@@ -96,7 +96,6 @@ export default function PuzzleGame() {
         .then((response) => response.json())
         .then((data) => {
             setSolution(data);
-            console.log(JSON.stringify({ initialState: convertBoardToData(board) });
             setLoading(false);
         })
         .catch((error) => console.error(error));
